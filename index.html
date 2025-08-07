@@ -76,25 +76,13 @@
       background-color: #1e7e34; /* darker green on hover */
     }
   </style>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const form = document.querySelector("form");
-      form.addEventListener("submit", function(event) {
-        // Prevent the form from submitting to Getform.io
-        event.preventDefault();
-
-        // Redirect to the welcome.html page
-        window.location.href = "welcome.html";
-      });
-    });
-  </script>
 </head>
 <body>
 
   <h1>Before entering to my official CV, first answer small questions</h1>
   <p>Welcome to the world of TUYISENGE Jean Chrisostom, known online as BLAD. Tell me who’s visiting today!</p>
 
-  <form action="https://getform.io/f/awnwxpeb" method="POST">
+  <form id="contact-form" action="YOUR_UNIQUE_ENDPOINT" method="POST">
     <label for="nickname">Your Fun Nickname:</label>
     <input type="text" id="nickname" name="nickname" placeholder="e.g. KingOfFire">
 
@@ -115,7 +103,8 @@
     <input type="text" id="address" name="address" placeholder="E.g. Kanzenze, Ntarama, Bugesera">
 
     <input type="hidden" name="_gotcha" style="display:none">
-    
+    <input type="hidden" name="_next" value="https://tuyisengenge-jean-chrisostom.github.io/TUYISENGE-Jean-Chrisostom/welcome.html" />
+
     <button type="submit" class="custom-button">Enter</button>
   </form>
 
