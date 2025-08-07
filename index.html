@@ -76,6 +76,18 @@
       background-color: #1e7e34; /* darker green on hover */
     }
   </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const form = document.querySelector("form");
+      form.addEventListener("submit", function(event) {
+        // Prevent the form from submitting to Getform.io
+        event.preventDefault();
+
+        // Redirect to the welcome.html page
+        window.location.href = "welcome.html";
+      });
+    });
+  </script>
 </head>
 <body>
 
@@ -103,10 +115,9 @@
     <input type="text" id="address" name="address" placeholder="E.g. Kanzenze, Ntarama, Bugesera">
 
     <input type="hidden" name="_gotcha" style="display:none">
-   <input type="hidden" name="_redirect" value="https://tuyisengenge-jean-chrisostom.github.io/welcome.html">
+    
     <button type="submit" class="custom-button">Enter</button>
   </form>
 
 </body>
 </html>
-
