@@ -33,7 +33,7 @@
       text-shadow: 1px 1px 3px #333;
     }
 
-    form {
+    .form-container {
       background-color: rgba(255, 255, 255, 0.95);
       max-width: 500px;
       margin: auto;
@@ -82,7 +82,7 @@
   <h1>Before entering to my official CV, first answer small questions</h1>
   <p>Welcome to the world of TUYISENGE Jean Chrisostom, known online as BLAD. Tell me who’s visiting today!</p>
 
-  <form id="contact-form" action="YOUR_UNIQUE_ENDPOINT" method="POST">
+  <div class="form-container">
     <label for="nickname">Your Fun Nickname:</label>
     <input type="text" id="nickname" name="nickname" placeholder="e.g. KingOfFire">
 
@@ -101,12 +101,9 @@
 
     <label for="address">Where Are You From (village, cell, district...)?</label>
     <input type="text" id="address" name="address" placeholder="E.g. Kanzenze, Ntarama, Bugesera">
-
-    <input type="hidden" name="_gotcha" style="display:none">
-    <input type="hidden" name="_next" value="https://tuyisengenge-jean-chrisostom.github.io/TUYISENGE-Jean-Chrisostom/welcome.html" />
-
-    <button type="submit" class="custom-button">Enter</button>
-  </form>
+    
+    <a href="welcome.html" class="custom-button">Enter</a>
+  </div>
 
 </body>
 </html>
