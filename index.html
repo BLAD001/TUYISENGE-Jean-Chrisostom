@@ -2,46 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>TUYISENGE Jean Chrisostom CV</title>
+  <title>Welcome to TUYISENGE Jean Chrisostom's CV</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    /* 🌌 Animated Background */
     body {
+      margin: 0;
+      padding: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
-      background-size: 400% 400%;
-      animation: gradientBG 12s ease infinite;
-      padding: 30px;
-      text-align: center;
+      overflow: hidden;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
       color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
     }
 
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    /* Floating circles */
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      animation: float 20s linear infinite;
     }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    .circle:nth-child(1) { width: 80px; height: 80px; left: 10%; animation-delay: 0s; }
+    .circle:nth-child(2) { width: 120px; height: 120px; left: 30%; animation-delay: 5s; }
+    .circle:nth-child(3) { width: 60px; height: 60px; left: 50%; animation-delay: 2s; }
+    .circle:nth-child(4) { width: 100px; height: 100px; left: 70%; animation-delay: 7s; }
+    .circle:nth-child(5) { width: 90px; height: 90px; left: 85%; animation-delay: 3s; }
 
     h1 {
-      color: #ffffff;
+      font-size: 32px;
       margin-bottom: 10px;
-      text-shadow: 1px 1px 4px #333;
+      text-shadow: 1px 1px 4px #000;
     }
 
     p {
       font-size: 18px;
       margin-bottom: 30px;
-      text-shadow: 1px 1px 3px #333;
+      text-shadow: 1px 1px 3px #000;
+      max-width: 600px;
     }
 
     .form-container {
       background-color: rgba(255, 255, 255, 0.95);
+      width: 100%;
       max-width: 500px;
-      margin: auto;
       padding: 25px;
-      border-radius: 10px;
+      border-radius: 12px;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
       text-align: left;
       color: #333;
+      position: relative;
+      z-index: 1;
     }
 
     label {
@@ -55,39 +86,63 @@
       padding: 10px;
       margin-bottom: 15px;
       border: 1px solid #ccc;
-      border-radius: 5px;
+      border-radius: 6px;
+      font-size: 16px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
-    
+
+    input:focus, select:focus {
+      border-color: #2c5364;
+      box-shadow: 0 0 8px rgba(44, 83, 100, 0.4);
+      outline: none;
+    }
+
     .custom-button {
-      display: inline-block;
-      background-color: #28a745; /* green color */
+      display: block;
+      width: 100%;
+      background-color: #28a745;
       color: white;
-      padding: 12px 24px;
+      padding: 12px;
+      text-align: center;
       text-decoration: none;
       border-radius: 8px;
       font-size: 18px;
       font-weight: bold;
       transition: background-color 0.3s ease;
-      border: none; /* Make sure the button has no border */
+      border: none;
       cursor: pointer;
+      margin-top: 10px;
     }
 
     .custom-button:hover {
-      background-color: #1e7e34; /* darker green on hover */
+      background-color: #1e7e34;
+    }
+
+    @media screen and (max-width: 600px) {
+      h1 { font-size: 26px; }
+      .form-container { padding: 20px; }
     }
   </style>
 </head>
 <body>
 
-  <h1>Before entering to my official CV, first answer small questions</h1>
-  <p>Welcome to the world of TUYISENGE Jean Chrisostom, known online as BLAD. Tell me who’s visiting today!</p>
+  <!-- 🌌 Floating Background Circles -->
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
 
-  <div class="form-container">
+  <!-- 📝 Welcome Form -->
+  <h1>Before Entering My Official CV</h1>
+  <p>Welcome to the world of <strong>TUYISENGE Jean Chrisostom</strong>, known online as <em>BLAD</em>. Just a few fun questions before you dive in!</p>
+
+  <form class="form-container" action="welcome.html" method="GET">
     <label for="nickname">Your Fun Nickname:</label>
-    <input type="text" id="nickname" name="nickname" placeholder="e.g. KingOfFire">
+    <input type="text" id="nickname" name="nickname" placeholder="e.g. KingOfFire" required>
 
     <label for="favorite-color">Favorite Color:</label>
-    <select id="favorite-color" name="favorite-color">
+    <select id="favorite-color" name="favorite-color" required>
       <option value="">Choose one...</option>
       <option value="Green">Green</option>
       <option value="Blue">Blue</option>
@@ -97,13 +152,13 @@
     </select>
 
     <label for="shoutout">What's on your mind?</label>
-    <input type="text" id="shoutout" name="shoutout" placeholder="Type any thought or vibe...">
+    <input type="text" id="shoutout" name="shoutout" placeholder="Type any thought or vibe..." required>
 
     <label for="address">Where Are You From (village, cell, district...)?</label>
-    <input type="text" id="address" name="address" placeholder="E.g. Kanzenze, Ntarama, Bugesera">
+    <input type="text" id="address" name="address" placeholder="E.g. Kanzenze, Ntarama, Bugesera" required>
     
-    <a href="welcome.html" class="custom-button">Enter</a>
-  </div>
+    <button type="submit" class="custom-button">Enter</button>
+  </form>
 
 </body>
 </html>
